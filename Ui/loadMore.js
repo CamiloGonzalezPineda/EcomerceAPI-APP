@@ -18,13 +18,12 @@ export async function loadMoreProducts() {
 
 
 export function MoreButton() {
+
 const btnMore = document.getElementById('loadMore')
 if(!btnMore) {
     console.log('Boton no encontrado');
     return
 }
-
-
 
 btnMore.addEventListener('click', loadMoreProducts)
 

@@ -6,6 +6,7 @@ import { state } from "../State/store.js";
 import { renderCategories } from "./Ui/renderCategorias.js";
 import { renderLayout } from "./Ui/renderLayout.js";
 import {MoreButton} from "./Ui/loadMore.js";
+import { renderCart } from "./Ui/renderCart.js";
 
 export async function init() {
 
@@ -22,7 +23,7 @@ export async function init() {
         renderLayout()
         renderCategories(categories)
         renderproductos(products)
-
+        renderCart(state.cart)
     } catch (error) {
 
         state.error = error.message
@@ -38,3 +39,4 @@ export async function init() {
 
 init()
 MoreButton()
+   

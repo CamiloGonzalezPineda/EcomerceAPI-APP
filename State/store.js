@@ -4,5 +4,7 @@ export const state ={
     error: null,
     skip: 0,
     limit: 30,
-    total: 0
-}
+    total: 0,
+    cart: [],
+    cartTotal: 0
+} 
