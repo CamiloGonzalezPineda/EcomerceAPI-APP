@@ -10,7 +10,9 @@ export async function loadMoreProducts() {
      state.total = total
      const btnMore = document.getElementById('loadMore')
      if(state.products.length >= state.total) {
+    btnMore.textContent = 'No exist more Products'
     btnMore.disabled =true
+
 }
      renderproductos(state.products)
 
