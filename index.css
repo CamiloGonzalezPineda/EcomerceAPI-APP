@@ -107,7 +107,7 @@ align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-#View-detail{
+#detail{
     border: none;
     width: 70px;
     padding: 10px;
@@ -138,12 +138,21 @@ align-items: center;
 #buttons-detail{
     display: flex;
 }
-
+.searchInput{
+    width: 20%;
+    padding: 4px;
+    border: none;
+    border: solid 1px black;
+    border-radius: 4px;
+    outline: none;
+    font-size: 20px;
+}
 #container-cart{
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    gap: 20px;
     position: relative;
 } 
 
@@ -154,6 +163,8 @@ align-items: center;
    
 }
 .icon{
+    width: 40px;
+    height: 40px;
     cursor: pointer;
 }
 .icon:hover + #cart {
@@ -190,6 +201,9 @@ align-items: center;
 
 .cardt{
 display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
 width: 100%;
 height: 70px;
 box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.4);
@@ -206,6 +220,9 @@ box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.4);
     color: #000000;
     cursor: pointer;
 
+}
+.totalGreen {
+    color: rgb(2, 188, 2);
 }
 .delete:hover{
 color: red;
@@ -224,10 +241,72 @@ color: red;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 600px;
 }
 
 h1{
     font-size: 200px;
     color: #ffffff;
+}
+
+
+
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+
+}
+.modal-content{
+    width: 40%;
+    max-width: 400px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+
+        opacity: 0;
+    transform: scale(0.8);
+    animation: modalFade 0.5s ease forwards;
+}
+
+@keyframes modalFade {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.modal-content img{
+    margin-top: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+.modal-content img:hover{
+    transform: scale(1.1);
+}
+
+.close{
+      position: absolute;
+    top: 2px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.close:hover{
+    transform: rotate(90deg);
+    color: red;
 }

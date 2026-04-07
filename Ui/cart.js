@@ -13,17 +13,19 @@ export function addCart(product) {
 
 export function btnAddCart() {
 
-const btnaddCart = document.querySelectorAll('.btn-add'); 
+document.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.btn-add')
 
-btnaddCart.forEach(btn => {
-    btn.addEventListener('click', ()=>{
-        const id = Number(btn.dataset.id);
-        const product = state.products.find(prod => prod.id === id);
+    if(btn){
+        const id = Number(btn.dataset.id)
+        const product = state.products.find(prd=>prd.id === id)
+
         addCart(product)
         renderCart()
-    console.log(state.cart)
-    })
+    }
 })
+
+
 }
 
 
@@ -47,7 +49,8 @@ deleteCart.forEach(btn => {
 })
 }
 
-// export function calculateCartTotal() {
-//     state.cartTotal = state.cart.reduce((total, product)=>total + product.price * product.quantity, 0);
-//     console.log(state.cartTotal)
-// }
+export function calculateCartTotal(carrt) {
+   return carrt.reduce((total, product)=>total + product.price * product.quantity, 0);
+
+}
+
