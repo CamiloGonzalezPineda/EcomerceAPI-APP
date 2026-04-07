@@ -313,7 +313,22 @@ h1{
     color: red;
 }
 
-@media (min-width: 1240px) {
+@media (min-width: 768px) {
+ main{
+    width: 100%;
+ }
+h1{
+    font-size: 200px;
+}
+.searchInput{
+    width: 40%;
+}
+ .card{
+    width: 40%;
+ }
+}
+
+@media (min-width: 1440px) {
  main{
     width: 100%;
  }
@@ -327,4 +342,5 @@ h1{
     width: 20%;
  }
 }
+
 
