@@ -8,6 +8,7 @@ export function renderproductos(products) {
     <img src="${product.image}" alt="${product.title}">
     <h2> ${product.title}</h2>
     <p>Price: $${product.price}</p>
+    <div class='btns-addDts'> 
     <button id="detail" class='View-detail'>Details </button>
     <button id="add" class="btn-add" data-id="${product.id}">Add Product</button>
     </div>
