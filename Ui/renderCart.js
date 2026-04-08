@@ -1,6 +1,7 @@
 import { state } from '../State/store.js'
 import { deleteCart } from './cart.js';
 import { calculateCartTotal } from './cart.js';
+import { countCart } from './counter.js';
 
 export function renderCart() {
     const container = document.getElementById('cart')
@@ -8,7 +9,12 @@ export function renderCart() {
     const total = calculateCartTotal(state.cart).toFixed(2)
 
     container.innerHTML = `
+   
 <h3>PRODUCTS</h3>
+
+<div class="countain-counter">
+ <p id='cart-count' class='counter'> 0 </p>
+</div>
 
 ${state.cart.map(product => `
         
@@ -32,8 +38,10 @@ ${state.cart.map(product => `
     const btnVaciar = document.querySelector('.btn-deletCart')
     btnVaciar.addEventListener('click', ()=>{
         vaciar()
-    })
 
+        
+    })
+countCart()
     }
 
   
@@ -42,3 +50,5 @@ ${state.cart.map(product => `
        state.cart = []
        renderCart()
     }
+
+

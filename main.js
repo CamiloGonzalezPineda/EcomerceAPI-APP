@@ -9,6 +9,8 @@ import {MoreButton} from "./Ui/loadMore.js";
 import { renderCart } from "./Ui/renderCart.js";
 import { busqueda } from "./Ui/filterName.js";
 import { btnAddCart } from "./Ui/cart.js";
+import { loadCart } from "./Ui/persistencia.js";
+import { countCart } from "./Ui/counter.js";
 export async function init() {
 
     state.loading = true
@@ -21,6 +23,7 @@ export async function init() {
      
         state.products = products
         state.total = total
+        loadCart()
         renderLayout()
         renderCategories(categories)
         renderproductos(products)
@@ -28,6 +31,9 @@ export async function init() {
         busqueda()
         btnAddCart()
         MoreButton()
+        countCart()
+    
+
     } catch (error) {
 
         state.error = error.message
