@@ -59,6 +59,7 @@ deleteCart.forEach(btn => {
         const id = Number(btn.dataset.id);
         removeProduct(id)
         renderCart()
+        
     })
 })
 }

@@ -2,7 +2,7 @@ import { state } from '../State/store.js'
 import { deleteCart } from './cart.js';
 import { calculateCartTotal } from './cart.js';
 import { countCart } from './counter.js';
-
+import { savecart } from './persistencia.js';
 export function renderCart() {
     const container = document.getElementById('cart')
     if(!container) return;
@@ -49,6 +49,9 @@ countCart()
   function vaciar() {
        state.cart = []
        renderCart()
+       savecart()
+       countCart()
+
     }
 
 

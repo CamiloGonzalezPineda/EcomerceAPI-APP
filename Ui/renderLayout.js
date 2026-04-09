@@ -6,7 +6,7 @@ export function renderLayout() {
     app.innerHTML = `
         <div id="container-cart"> 
 
-                    <input class='searchInput' type="text" placeholder="Serach Product">
+                    <input class='searchInput' type="text" placeholder="Search Product">
                     
 
                       <div class='countainer-cartCounter'>                  
