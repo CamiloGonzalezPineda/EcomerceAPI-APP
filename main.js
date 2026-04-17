@@ -19,7 +19,7 @@ export async function init() {
 
     try {
            const categories = await getCategories()
-        const {products, total} = await getProducts(state.limit, state.skip)
+        const {products, total} = await getProducts({limit: state.limit, skip: state.skip, category: state.category})
      
         state.products = products
         state.total = total

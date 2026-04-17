@@ -3,8 +3,9 @@ export const state ={
     loading: false,
     error: null,
     skip: 0,
-    limit: 30,
+    limit: 12,
     total: 0,
     cart: [],
-    cartTotal: 0
+    cartTotal: 0,
+    category: null
 } 
